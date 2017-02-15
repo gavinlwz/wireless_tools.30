@@ -26,7 +26,11 @@
 #include <string.h>
 #include <unistd.h>
 #include <netdb.h>		/* gethostbyname, getnetbyname */
+#ifdef ANDROID
+#include <net/if_ether.h>	/* struct ether_addr */
+#else
 #include <net/ethernet.h>	/* struct ether_addr */
+#endif
 #include <sys/time.h>		/* struct timeval */
 #include <unistd.h>
 
